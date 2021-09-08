@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 
-RUN apt-get update  &&  apt-get install -y gnupg2
+RUN apt-get update
+RUN apt-get install -y gnupg2 software-properties-common
 RUN echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | tee /etc/apt/sources.list.d/ansible.list
 RUN echo "deb-src http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | tee -a /etc/apt/sources.list.d/ansible.list
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7BB9C367
