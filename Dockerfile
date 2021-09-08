@@ -5,6 +5,7 @@ RUN apt-get update  &&  apt-get install -y gnupg2    && \
     echo "deb-src http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | tee -a /etc/apt/sources.list.d/ansible.list && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7BB9C367 && \
     DEBIAN_FRONTEND=noninteractive  apt-get update  && \
+    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3  && \
     apt-get install -y ansible && \
     apt-get install -y python-pip && \
     pip install --upgrade pycrypto pywinrm  && \
