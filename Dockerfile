@@ -6,7 +6,6 @@ RUN echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | tee
 RUN echo "deb-src http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" | tee -a /etc/apt/sources.list.d/ansible.list
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7BB9C367
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
-RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3
 RUN apt-get install -y ansible
 RUN apt-get install -y python-pip
 RUN pip install --upgrade pycrypto pywinrm
